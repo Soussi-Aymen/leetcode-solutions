@@ -17,7 +17,7 @@ class Solution:
 
         while queue:
             level_sum = 0
-            for i in range(len(queue)):
+            for _ in range(len(queue)):
                 node = queue.popleft()
                 level_sum += node.val
                 
