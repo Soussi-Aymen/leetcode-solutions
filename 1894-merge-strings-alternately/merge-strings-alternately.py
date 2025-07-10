@@ -6,7 +6,9 @@ class Solution:
         for i in range(min_length):
             result.append(word1[i])
             result.append(word2[i])
-
-        result.append(word1[min_length:] or word2[min_length:])
         
+        # Add the remaining part of the longer word (one of them is always "")
+        result.extend(word1[min_length:])
+        result.extend(word2[min_length:])
+
         return "".join(result)
