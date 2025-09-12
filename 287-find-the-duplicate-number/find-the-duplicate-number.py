@@ -7,5 +7,3 @@ class Solution:
         for element, count in freq.items():
             if count > 1: 
                 return element
-        
-        return -1
