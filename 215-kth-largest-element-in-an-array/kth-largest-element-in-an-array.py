@@ -4,9 +4,8 @@ class Solution:
         heap = []
 
         for num in nums:
-            heappush(heap, -num)
- 
-        for i in range(k-1):
-            heappop(heap)
+            heappush(heap, num)
+            if len(heap) > k:
+                heappop(heap)
         
-        return - heappop(heap)
+        return heap[0]
