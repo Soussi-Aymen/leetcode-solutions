@@ -12,16 +12,19 @@ class Solution:
 
         node = root
         queue = deque([node])
-        end = False # flag to mark if a None has been seen
+        # flag to mark if a None has been seen
+        end = False 
         
         while queue:
             node = queue.popleft()
             if node:
                 if end:
+                    # If we have seen None before, any non-null node after is invalid
                     return False
                 
                 queue.append(node.left)
                 queue.append(node.right)
             else:
-                end = True
+                # Mark that we have encountered a None
+                end = True 
         return True
